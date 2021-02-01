@@ -47,9 +47,10 @@ def check_twitter_api(context):
 
     # NEW posts in the user's custom list
     response_obj = twitter.lists.statuses(owner_screen_name=TW_LIST_OWNER_SCREEN_NAME,
-                                          slug=TW_LIST_SLUG,
-                                          since_id=last_list_twit_id)
-
+                                          list_id=1356294143841075201,
+                                          since_id=last_list_twit_id,
+                                          owner_id=TW_LIST_OWNER_SCREEN_NAME)
+    print("______________________")
     # if exists new tweets in the list
     if (len(response_obj)) > 0:
 
