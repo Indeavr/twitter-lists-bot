@@ -3,7 +3,7 @@ import time
 
 from twitterlist.config import TG_YOUR_TELEGRAM_PRIVATE_LIST_MSG_CHAT_ID, \
     TG_YOUR_TELEGRAM_PRIVATE_MENTIONED_MSG_CHAT_ID, \
-    TW_LIST_OWNER_SCREEN_NAME, TW_LIST_SLUG, TW_LAST_LIST_TWIT_ID_FILENAME, TW_LAST_MENTIONED_TWIT_ID_FILENAME
+    TW_LIST_OWNER_SCREEN_NAME, TW_LIST_ID, TW_LAST_LIST_TWIT_ID_FILENAME, TW_LAST_MENTIONED_TWIT_ID_FILENAME
 from twitterlist.utils import module_logger
 
 TW_LAST_LIST_TWIT_ID_FULL_FILENAME = os.path.dirname(os.path.realpath(__file__)) + '/../' \
@@ -47,7 +47,7 @@ def check_twitter_api(context):
 
     # NEW posts in the user's custom list
     response_obj = twitter.lists.statuses(owner_screen_name=TW_LIST_OWNER_SCREEN_NAME,
-                                          list_id=1356294143841075201,
+                                          list_id=TW_LIST_ID,
                                           since_id=last_list_twit_id,
                                           owner_id=TW_LIST_OWNER_SCREEN_NAME)
     print("______________________")
